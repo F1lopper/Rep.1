@@ -1,24 +1,25 @@
-<div class = "main_style-ForDiv">
+<div class = "MainStyleForDiv">
 
-    <div class = "main_style-ForImg"><img src="../Img/Pretty boy.jpg" width="300" heught="300"></div>
+    <div class = "MainStyleForImg" onclick="ClickHandler()"><img src="../Img/Pretty boy.jpg" width="300" heught="300"></div>
 
-    <div class = "main_style-ForName"> Шарипов Азизбек </div>
+    <div id="MainStyleForName" class = "MainStyleForName" onmouseenter="MoveHandlerIn()"> Шарипов Азизбек </div>
 
-    <div class = "main_style-ForDate"> 27.07.2003 </div>
+    <div class = "MainStyleForDate"> 27.07.2003 </div>
 
-    <div class = "main_style-ForUniversity"> ОмГУ им. Ф.М.Достоевского </div>
+    <div class = "MainStyleForUniversity"> ОмГУ им. Ф.М.Достоевского </div>
 
-    <div class = "main_style-ForGroup"> Группа: МББ-101-О-01 </div>
-
+    <div class = "MainStyleForGroup"onmouseout="MoveHandlerOut()"> Группа: МББ-101-О-01 </div>
+    ​
+    <input onchange="ChangeHandler(event)" />
 </div>
 
 <style>
     
-    .main_style-ForDiv{
+    .MainStyleForDiv{
         display: flexbox;
         justify-content: center;
     }
-    .main_style-ForImg{
+    .MainStyleForImg{
         display:flex;
         justify-content: center;
         background-color:aqua;
@@ -27,7 +28,7 @@
         box-shadow:5px 5px 10px #2B1015;
     }
 
-    .main_style-ForName{
+    .MainStyleForName{
         display:flex;
         justify-content: center;
         color: rgb(22, 184, 111);
@@ -35,7 +36,7 @@
         font-family:serif      
     }
 
-    .main_style-ForDate{
+    .MainStyleForDate{
         display: flex;
         justify-content: center;
         color: purple;
@@ -44,7 +45,7 @@
         Font-weight:bold
     }
 
-    .main_style-ForUniversity{
+    .MainStyleForUniversity{
         display: flex;
         justify-content: center;
         color: rgb(199, 19, 61);
@@ -52,7 +53,7 @@
         font-family: fantasy
     }
 
-    .main_style-ForGroup{
+    .MainStyleForGroup{
         display: flex;
         justify-content: center;
         color: rgb(24, 15, 184);
@@ -61,3 +62,25 @@
     }
 
 </style>
+
+<script>
+    function ClickHandler() {
+        alert("HELLOW")
+    }
+
+    function ChangeHandler(event) {
+        console.log("event", event.target.value);
+        let element = document.getElementsByName("MainStyleForName");
+        element.innerHTML = event.target.value
+        alert(event.target.value)
+    }
+
+    function MoveHandlerIn(event) {
+        console.log("event(in)", event);
+    }
+
+    function MoveHandlerOut(event) {
+        console.log("event(out)", event);
+    }
+
+</script>
